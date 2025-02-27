@@ -1,0 +1,56 @@
+﻿@* Interface Enumarable = Enumarate or list (to ascertain the number of : count) *@
+
+@model IEnumerable<BoitshokoStudyGroup.Models.Student>
+
+
+@{
+    ViewBag.Title = "StudyGroup";
+}
+
+<h2>StudyGroup</h2>
+
+@*<p>
+        @Html.ActionLink("Create New", "Create") >> In this overload it is the name and the action >> Link going nowhere.
+    </p>*@
+
+<table class="StudentTable">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Student_Number)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StudentName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Surname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+    </tr>
+
+    @foreach (var item in Model) //For each Student
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Student_Number)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StudentName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Surname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            @*<td>
+                    @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                </td>*@
+        </tr>
+    }
+
+</table>
+
